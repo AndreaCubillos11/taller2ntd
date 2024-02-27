@@ -89,6 +89,10 @@
   box-sizing: border-box;
 }
 
+#projects {
+  background-image: url('../assets/img/peliculas.jpeg'); 
+}
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;

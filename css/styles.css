@@ -83,15 +83,32 @@
   --bs-highlight-bg: #faf4e0;
 }
 
+
+
+
+.color-filmografia {
+  color: rgb(0, 0, 0); 
+}
+
+tbody {
+  color: #000000;
+  font-weight: bold;
+}
+
+thead {
+
+  color: #000000;
+}
+
+#projects {
+  background-image: url('../assets/img/peliculas.jpeg'); 
+}
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-#projects {
-  background-image: url('../assets/img/peliculas.jpeg'); 
-}
 
 @media (prefers-reduced-motion: no-preference) {
   :root {

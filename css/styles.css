@@ -98,6 +98,7 @@
 
 .color-filmografia {
   color: rgb(0, 0, 0); 
+  font-size: 290%;
 }
 
 tbody {
@@ -107,11 +108,13 @@ tbody {
 
 thead {
 
-  color: #000000;
+  color: #0044ff;
+   font-weight: bold;
 }
 
 #projects {
   background-image: url('../assets/img/peliculas.jpeg'); 
+ 
 }
 *,
 *::before,

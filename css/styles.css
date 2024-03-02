@@ -195,15 +195,15 @@ thead {
   font-weight: bold;
 }
 
+  
+
+
 #projects {
+
   background-image: url('../assets/img/peliculas.jpeg');
 
-}
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+
 }
 
 

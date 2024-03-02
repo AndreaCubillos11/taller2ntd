@@ -75,33 +75,106 @@
         </div>
     </section>
 
+ <!-- Biografia-->
 
-  
-    <!--<section class="biography-section" id="biografía">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="text-white mb-4">Biografía de Adam Sandler</h2>
-                    <p class="text-white-50">
-                        Adam Sandler nació el 9 de septiembre de 1966 en Brooklyn, Nueva York. Comenzó su carrera como
-                        comediante en clubes nocturnos antes de ser descubierto por el programa de televisión "Saturday
-                        Night Live". Su estilo único de humor lo catapultó a la fama, y pronto se convirtió en uno de
-                        los actores y comediantes más reconocidos de Hollywood.
-                        <br><br>
-                        Sandler es conocido por su habilidad para interpretar una amplia variedad de personajes
-                        cómicos, desde el tonto simpático hasta el bromista irreverente. Ha protagonizado numerosas
-                        películas exitosas, incluyendo "Happy Gilmore", "Billy Madison", "The Wedding Singer" y "Big
-                        Daddy". Además de actuar, Sandler también ha incursionado en la producción y escritura de
-                        películas.
-                        <br><br>
-                        Fuera de su carrera en el cine, Sandler es un filántropo activo y ha participado en
-                        organizaciones benéficas en apoyo de la educación y la salud infantil. Es un devoto fanático de
-                        los deportes, especialmente del baloncesto y el hockey sobre hielo.
-                    </p>
-                </div>
+<section class="biography-section" id="biografía">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="color-biografia">Biografía de Adam Sandler</h2>
+                <p class="color-texto-biografia">
+                    Adam Sandler nació el 9 de septiembre de 1966 en Brooklyn, Nueva York. Comenzó su carrera como
+                    comediante en clubes nocturnos antes de ser descubierto por el programa de televisión "Saturday
+                    Night Live". Su estilo único de humor lo catapultó a la fama, y pronto se convirtió en uno de
+                    los actores y comediantes más reconocidos de Hollywood.
+                    <br><br>
+                    Sandler es conocido por su habilidad para interpretar una amplia variedad de personajes
+                    cómicos, desde el tonto simpático hasta el bromista irreverente. Ha protagonizado numerosas
+                    películas exitosas, incluyendo "Happy Gilmore", "Billy Madison", "The Wedding Singer" y "Big
+                    Daddy". Además de actuar, Sandler también ha incursionado en la producción y escritura de
+                    películas.
+                    <br><br>
+                    Fuera de su carrera en el cine, Sandler es un filántropo activo y ha participado en
+                    organizaciones benéficas en apoyo de la educación y la salud infantil. Es un devoto fanático de
+                    los deportes, especialmente del baloncesto y el hockey sobre hielo.
+                </p>
+                <button class="btn" onclick="document.getElementById('myModal').style.display='block'">¡¡¡ATRAPA A ADAM!!!</button>
             </div>
         </div>
-    </section>-->
+    </div>
+</section>
+
+<!-- Juego-->
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+        <h1>Adam Sandler Catcher</h1>
+        <p>Click en la cara de Adam Sandler para atraparlo!</p>
+        <div id="game-container" style="position: relative; width: 400px; height: 300px; border: 2px solid black;"></div>
+        <p id="score">Puntaje: 0</p>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+        <h1>Adam Sandler Catcher</h1>
+        <p>Click en la cara de Adam Sandler para atraparlo!</p>
+        <div id="game-container" style="position: relative; width: 400px; height: 300px; border: 2px solid black;"></div>
+        <p id="score">Puntaje: 0</p>
+    </div>
+</div>
+
+<script>
+    let score = 0;
+    const gameContainer = document.getElementById("game-container");
+    const scoreDisplay = document.getElementById("score");
+
+    function randomPosition() {
+        const x = Math.random() * (gameContainer.offsetWidth - 50);
+        const y = Math.random() * (gameContainer.offsetHeight - 50);
+        return { x, y };
+    }
+
+    function createSandler() {
+        const sandler = document.createElement("img");
+        sandler.src = "https://lens-storage.storage.googleapis.com/png/d185c35252414d8f9fe4c7c44398d1da";
+        sandler.classList.add("adam-sandler");
+        const position = randomPosition();
+        sandler.style.position = "absolute"; 
+        sandler.style.left = position.x + "px";
+        sandler.style.top = position.y + "px";
+        sandler.style.width = "50px";
+        sandler.style.height = "50px";
+        sandler.addEventListener("click", () => {
+            score++;
+            scoreDisplay.textContent = "Puntaje: " + score;
+            sandler.remove();
+        });
+        gameContainer.appendChild(sandler);
+    }
+
+    const intervalId = setInterval(createSandler, 1000);
+
+    setTimeout(() => {
+        clearInterval(intervalId);
+        alert("¡Juego terminado! Tu puntaje: " + score);
+        document.getElementById('myModal').style.display = "none";
+    }, 20000);
+
+    
+    window.onclick = function(event) {
+        var modal = document.getElementById('myModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+
+
+<!-- proyectos -->
 
     <section class="projects-section bg-light" id="projects">
 

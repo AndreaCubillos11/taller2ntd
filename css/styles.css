@@ -97,6 +97,13 @@
   --bs-highlight-bg: #faf4e0;
 }
 
+/* Cambia el cursor a tu imagen personalizada */
+.custom-cursor {
+  cursor: url('assets/img/adam 3 Click.png'), auto;
+}
+
+
+
 
 .color-texto-sobre {
   color: white;

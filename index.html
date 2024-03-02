@@ -34,11 +34,12 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">Sobre él</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#biografía">Biografía</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Películas</a></li>
 
                     <li class="nav-item"><a class="nav-link" href="#souvenirs">Souvenirs</a></li>
                     <li class="nav-item"><a class="nav-link" href="#outfits">Outfits</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#biografía">Biografía</a></li>
+                    
 
                 </ul>
             </div>
@@ -61,10 +62,10 @@
 
     <!-- Sobre el-->
     <section class="about-section text-center" id="about">
-        <div class="container px-4 px-lg-5">
+        <video src="assets/video/Adam Sandler - Funny Movie Clips !!.mp4" autoplay muted loop></video>
+        <div class="container px-4 px-lg-12">
             <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8">
-                    <video src="assets/video/Adam Sandler - Funny Movie Clips !!.mp4" autoplay muted loop></video>
+                <div class="col-lg-8">   
                     <h2 class="color-sobre">¡El Caos Encantador de Adam Sandler!</h2>
                     <p class="color-texto-sobre">
                         Adam Sandler, el maestro del caos cómico, hace reír a millones con sus personajes extravagantes y sus chistes irreverentes. Desde su icónico papel en "Happy Gilmore" hasta sus locuras en "Billy Madison", Sandler es como una tormenta de risas que arrasa con todo a su paso. ¡Prepárate para soltar carcajadas mientras te sumerges en el mundo del humor salvaje de Adam Sandler!
@@ -73,7 +74,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>
 
  <!-- Biografia-->
 
@@ -81,7 +82,7 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8">
-                <h2 class="color-biografia">Biografía de Adam Sandler</h2>
+                <h2 class="color-biografia">Biografía de Adam </h2>
                 <p class="color-texto-biografia">
                     Adam Sandler nació el 9 de septiembre de 1966 en Brooklyn, Nueva York. Comenzó su carrera como
                     comediante en clubes nocturnos antes de ser descubierto por el programa de televisión "Saturday
@@ -98,7 +99,7 @@
                     organizaciones benéficas en apoyo de la educación y la salud infantil. Es un devoto fanático de
                     los deportes, especialmente del baloncesto y el hockey sobre hielo.
                 </p>
-                <button class="btn" onclick="document.getElementById('myModal').style.display='block'">¡¡¡ATRAPA A ADAM!!!</button>
+                <button class="btn btn-primary" onclick="document.getElementById('myModal').style.display='block'">¡Atrapa a Adam!</button>
             </div>
         </div>
     </div>
@@ -109,8 +110,8 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-        <h1>Adam Sandler Catcher</h1>
-        <p>Click en la cara de Adam Sandler para atraparlo!</p>
+        <h1> Cazador de Adams </h1>
+        <p>¡Da click en la cara de Adam Sandler para atraparlo!</p>
         <div id="game-container" style="position: relative; width: 400px; height: 300px; border: 2px solid black;"></div>
         <p id="score">Puntaje: 0</p>
     </div>
@@ -125,52 +126,6 @@
         <p id="score">Puntaje: 0</p>
     </div>
 </div>
-
-<script>
-    let score = 0;
-    const gameContainer = document.getElementById("game-container");
-    const scoreDisplay = document.getElementById("score");
-
-    function randomPosition() {
-        const x = Math.random() * (gameContainer.offsetWidth - 50);
-        const y = Math.random() * (gameContainer.offsetHeight - 50);
-        return { x, y };
-    }
-
-    function createSandler() {
-        const sandler = document.createElement("img");
-        sandler.src = "https://lens-storage.storage.googleapis.com/png/d185c35252414d8f9fe4c7c44398d1da";
-        sandler.classList.add("adam-sandler");
-        const position = randomPosition();
-        sandler.style.position = "absolute"; 
-        sandler.style.left = position.x + "px";
-        sandler.style.top = position.y + "px";
-        sandler.style.width = "50px";
-        sandler.style.height = "50px";
-        sandler.addEventListener("click", () => {
-            score++;
-            scoreDisplay.textContent = "Puntaje: " + score;
-            sandler.remove();
-        });
-        gameContainer.appendChild(sandler);
-    }
-
-    const intervalId = setInterval(createSandler, 1000);
-
-    setTimeout(() => {
-        clearInterval(intervalId);
-        alert("¡Juego terminado! Tu puntaje: " + score);
-        document.getElementById('myModal').style.display = "none";
-    }, 20000);
-
-    
-    window.onclick = function(event) {
-        var modal = document.getElementById('myModal');
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
 
 
 
@@ -381,7 +336,7 @@
 
 
     <section class="signup-section" id="souvenirs">
-        <div class="container px-4 px-lg-5">
+        <div class="container px-4 px-lg-4">
             <h2 class="text-center mb-4">Souvenirs de Adam Sandler</h2>
             <div class="row gx-4 gx-lg-5">
                 <div class="col-lg-4 mb-5">
@@ -401,7 +356,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-5">
+                <div class="col-lg-4 mb-4">
                     <div class="card">
                         <img src="../taller2ntd/assets/img/Mug-Adam.jpeg" class="card-img-top" alt="Souvenir 2">
                         <div class="card-body">
@@ -424,7 +379,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 mb-5">
+                <div class="col-lg-4 mb-4">
                     <div class="card">
                         <img src="../taller2ntd/assets/img/Cuaderno-Adam.jpeg" class="card-img-top" alt="Souvenir 3">
                         <div class="card-body">
@@ -441,7 +396,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 mb-5">
+                <div class="col-lg-4 mb-4">
                     <div class="card">
                         <img src="../taller2ntd/assets/img/FotografíaAuto.jpeg" class="card-img-top" alt="Souvenir 4">
                         <div class="card-body">
@@ -473,7 +428,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-5">
+                <div class="col-lg-4 mb-4">
                     <div class="card">
                         <img src="../taller2ntd/assets/img/Figura-BobbyBoucher.jpeg" class="card-img-top"
                             alt="Souvenir 5">
@@ -497,7 +452,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-5">
+                <div class="col-lg-4 mb-4">
                     <div class="card">
                         <img src="../taller2ntd/assets/img/Stickers-Adam.jpg" class="card-img-top" alt="Souvenir 6">
                         <div class="card-body">
@@ -633,7 +588,7 @@
 
 
     <footer class="footer bg-black small text-center text-white-50">
-        <div class="container px-4 px-lg-5">Hecho por: Andrea Cubillos, Ivonne Sierra, Mariana Ospina</div>
+        <div class="container px-4 px-lg-5">Realizado por: Andrea Cubillos, Ivonne Sierra, Mariana Ospina</div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
